@@ -47,7 +47,7 @@ export default function Programa() {
             transition={{ duration: 0.8, delay: 0.12 }}
           >
             <p className="body-lg">
-              Las que entran al cohort foundation acceden a beneficios, perks y red que no van a estar disponibles cuando el programa abra acceso general. Y forman parte de la historia que recien empieza: la primera jurisdiccion digital disenada para construir global desde el sur.
+              Las que entran al cohort foundation acceden a beneficios, perks y red que no van a estar disponibles cuando el programa abra acceso general. Y forman parte de la historia que recien empieza: la primera zona digital disenada para construir global desde el sur.
             </p>
           </motion.div>
         </div>

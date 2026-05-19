@@ -26,7 +26,7 @@ const benefitCards = [
   {
     num: "05",
     title: "Construi la zona desde adentro",
-    body: "Las decisiones de producto, regulacion y diseno de la zona se toman con feedback del cohort. No vas a ser cliente. Vas a ser arquitecto de la primera jurisdiccion digital de Latam.",
+    body: "Las decisiones de producto, regulacion y diseno de la zona se toman con feedback del cohort. No vas a ser cliente. Vas a ser arquitecto de la primera zona digital de Latam.",
   },
 ];
 

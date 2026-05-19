@@ -136,7 +136,7 @@ export default function Footer() {
         }}
       >
         <span>© 2026 Anden - anden.tech</span>
-        <span>JURISDICCION DIGITAL - LEY 27.506 - REGIMEN ZF</span>
+        <span>ZONA DIGITAL - LEY 27.506 - REGIMEN ZF</span>
       </div>
       <style jsx>{`
         @media (max-width: 780px) {
