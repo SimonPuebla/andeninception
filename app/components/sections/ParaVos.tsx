@@ -16,21 +16,21 @@ interface ProfileCard {
 const profiles: ProfileCard[] = [
   {
     num: "01",
-    title: "Proveedor de servicios digitales",
-    tagline: "Software, AI, SaaS, infraestructura. Exportas servicios al mundo.",
+    title: "Proveedor de Servicios digitales, Ciencia y tecnología",
+    tagline: "Software, AI, SaaS, infraestructura. Exportás servicios al mundo. Junto a biotecnología, nanotecnología, aeroespacial, nuclear, I+D (Investigación y Desarrollo), e industria 4.0. Exportás tech avanzada al futuro.",
     leftEyebrow: "DE QUE TE BENEFICIAS",
     leftItems: [
-      "Ganancias al 10-15% efectivo en lugar de 35% del regimen general",
-      "Reduccion de 40-70% en cargas patronales via bono de credito fiscal LEC",
+      "Ganancias hasta el 15% efectivo en lugar de 35% del regimen general",
+      "Reduccion de 40-80% en cargas patronales via bono de credito fiscal LEC",
       "0% de retenciones a la exportacion de servicios",
       "Operacion legal en USD bajo regimen de Zona Franca",
       "USD 1.5M en perks del ecosistema NVIDIA Inception y partners",
-      "Compliance LEC automatizado, reporting fiscal y regulatorio resuelto",
+      "Setup legal completo, aplicación y compliance recurrente bajo régimen LEC y ZFM",
+      "Red de pares en industrias de conocimiento, partners y oportunidades cruzadas",
     ],
     rightEyebrow: "POR QUE ACA Y NO AFUERA",
     rightItems: [
       "No tenes que mudarte ni constituir en USA. Operas global desde tu pais.",
-      "Estabilidad fiscal garantizada por 10 años desde tu registracion (sujeto a renovación de LEC o ampliación del término de LEC).",
       "Acceso a una red de inversores latam y globales que no llegas solo.",
       "Estas cerca de tu talento, tu equipo y tu mercado natural.",
       "Sumas credenciales reales: respaldo de Protocol Labs, NVIDIA, Crecimiento.",
@@ -43,16 +43,15 @@ const profiles: ProfileCard[] = [
     tagline: "Estudios de diseno, consultoria, audiovisual, biotech, ingenieria. Vendes tu expertise afuera.",
     leftEyebrow: "DE QUE TE BENEFICIAS",
     leftItems: [
-      "Reduccion de Ganancias al 10-15% efectivo sobre tu utilidad",
-      "Bono de credito fiscal LEC del 40-70% sobre cargas patronales",
-      "Cuenta operativa en USD bajo regimen de Zona Franca",
-      "0% IVA en operaciones intra-zona con otros miembros del cohort y hacia afuera",
+      "Ganancias hasta el 15% efectivo en lugar de 35% del regimen general",
+      "Reduccion de 40-80% en cargas patronales via bono de credito fiscal LEC",
+      "0% de retenciones a la exportacion de servicios",
+      "USD 1.5M en perks del ecosistema NVIDIA Inception y partners",
       "Red de pares en industrias de conocimiento, partners y oportunidades cruzadas",
     ],
     rightEyebrow: "POR QUE ACA Y NO AFUERA",
     rightItems: [
       "Mantenes tu equipo en Latam, sumas un vehiculo internacional sin doble estructura.",
-      "Estabilidad fiscal de 10 años: planificas a largo plazo sin sustos (sujeto a renovación de LEC o ampliación del término de LEC).",
       "Acceso a la red de inversores y demo days del cohort.",
       "Acompañamiento en aplicación y compliance LEC y de ZFM resuelto end-to-end, sin armar un equipo legal interno.",
       "Visibilidad institucional como parte del cohort foundation.",
@@ -65,17 +64,15 @@ const profiles: ProfileCard[] = [
     tagline: "Ya operas. Tenes LEC sin aprovechar, holding offshore costoso o estructura suboptima.",
     leftEyebrow: "DE QUE TE BENEFICIAS",
     leftItems: [
-      "Diagnostico completo de tu estructura actual y propuesta de optimizacion",
-      "Migracion asistida a la zona economica digital, sin disrupcion operativa",
-      "Recuperacion de beneficios LEC no aprovechados: credito fiscal acumulado",
-      "Eliminacion de la doble carga de estructura offshore + operacion local",
-      "Compliance automatizado: dashboard de tu estado fiscal y regulatorio en tiempo real",
-      "USD 1.5M en perks de partners y red de inversores del cohort",
+      "Ganancias hasta el 15% efectivo en lugar de 35% del regimen general",
+      "Reduccion de 40-80% en cargas patronales via bono de credito fiscal LEC",
+      "0% de retenciones a la exportacion de servicios",
+      "Setup legal completo, aplicación y compliance recurrente bajo régimen LEC y ZFM",
+      "Red de pares en industrias de conocimiento, partners y oportunidades cruzadas",
     ],
     rightEyebrow: "POR QUE ACA Y NO AFUERA",
     rightItems: [
       "Tu holding en USA o Caymans te cuesta 30-80K USD anuales sin upside fiscal real.",
-      "Estabilidad fiscal de 10 años: lo que firmas hoy, queda firme una decada (sujeto a renovación de LEC o ampliación del término de LEC).",
       "0% retenciones a la exportacion: cobras lo que facturas, sin scraping fiscal.",
       "Acceso al cohort foundation como caso de estudio: prensa, credibilidad, network.",
       "Equipo Anden te acompana en la migracion: legal, contable, operativo.",
@@ -367,7 +364,7 @@ export default function ParaVos() {
           transition={{ duration: 0.8, delay: 0.24 }}
         >
           <span style={{ fontWeight: 600, color: "var(--ink)", marginRight: 6 }}>Aclaración importante:</span>
-          Los beneficios fiscales descriptos están supeditados al éxito de la aplicación al régimen correspondiente de cada país. Andén Inception acompaña el proceso, pero no garantizamos el resultado de la solicitud. La aprobación depende de las autoridades fiscales y regulatorias de cada jurisdicción.
+          Los beneficios fiscales descriptos están supeditados al éxito de la aplicación al régimen correspondiente de cada país. Andén Inception acompaña el proceso, pero no garantizamos el resultado de la solicitud. La aprobación depende de las autoridades fiscales y regulatorias de cada país.
         </motion.div>
       </div>
     </section>

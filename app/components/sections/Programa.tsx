@@ -2,11 +2,11 @@
 import { motion } from "framer-motion";
 
 const previewItems = [
-  "Jurisdiccion digital",
+  "Zona digital",
   "Beneficios fiscales",
-  "Banking en USD",
+  "Banking en USD / Stables",
   "Red de inversores",
-  "USD 1.5M en perks",
+  "USD 1.5M en perks by NVIDIA Inception y partners",
 ];
 
 export default function Programa() {
@@ -37,7 +37,7 @@ export default function Programa() {
             transition={{ duration: 0.8, delay: 0.06 }}
           >
             <p className="body-lg">
-              Anden Inception es la primera cohort de empresas que se incorpora a la zona economica digital. Pensado como un programa de incubacion premium: te damos una jurisdicción operativa, acompañamos en la aplicación y registro de regimenes de beneficios fiscales,  te conectamos con inversores, y te potenciamos para que tu empresa salga al mundo con todo resuelto desde el día uno.
+              Anden Inception es la primera cohort de empresas que se incorpora a la zona economica digital. Pensado como un programa de incubacion premium: te damos una zona digital operativa, acompañamos en la aplicación y registro de regimenes de beneficios fiscales,  te conectamos con inversores, y te potenciamos para que tu empresa salga al mundo con todo resuelto desde el día uno.
             </p>
           </motion.div>
           <motion.div
@@ -47,7 +47,7 @@ export default function Programa() {
             transition={{ duration: 0.8, delay: 0.12 }}
           >
             <p className="body-lg">
-              Las que entran al cohort foundation acceden a beneficios, perks y red que no van a estar disponibles cuando el programa abra acceso general. Y forman parte de la historia que recien empieza: la primera jurisdiccion digital disenada para construir global desde el sur.
+              Las que entran al cohort foundation acceden a beneficios, perks y red que no van a estar disponibles cuando el programa abra acceso general. Y forman parte de la historia que recien empieza: la primera zona digital disenada para construir global desde el sur.
             </p>
           </motion.div>
         </div>

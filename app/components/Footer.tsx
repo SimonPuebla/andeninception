@@ -27,7 +27,7 @@ export default function Footer() {
             />
           </a>
           <p style={{ maxWidth: 420, color: "var(--cream-70)", fontSize: 14, lineHeight: 1.6, marginTop: 18 }}>
-            La infraestructura de compliance que convierte zonas obsoletas en jurisdicciones digitales operativas.
+            La infraestructura de compliance que convierte zonas obsoletas en zonas digitales operativas.
           </p>
         </div>
         <div>
@@ -66,7 +66,7 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="mailto:contacto@anden.tech" style={{ fontSize: 14, color: "var(--cream-70)" }}>
+              <a href="mailto:simon@anden.tech" style={{ fontSize: 14, color: "var(--cream-70)" }}>
                 Contacto
               </a>
             </li>
@@ -136,7 +136,7 @@ export default function Footer() {
         }}
       >
         <span>© 2026 Anden - anden.tech</span>
-        <span>JURISDICCION DIGITAL - LEY 27.506 - REGIMEN ZF</span>
+        <span>ZONA DIGITAL - LEY 27.506 - REGIMEN ZF</span>
       </div>
       <style jsx>{`
         @media (max-width: 780px) {

@@ -11,7 +11,7 @@ const faqItems = [
   {
     question: "Tengo que mudarme a Argentina?",
     answer:
-      "No. La zona economica digital opera con incorporacion 100% digital. Tu empresa se constituye y opera desde la jurisdiccion sin requerir presencia fisica de los founders ni del equipo. Podes seguir viviendo y trabajando desde donde estes en Latam o el mundo.",
+      "No. La zona economica digital opera con incorporacion 100% digital. Tu empresa se constituye y opera desde la zona sin requerir presencia fisica de los founders ni del equipo. Podes seguir viviendo y trabajando desde donde estes en Latam o el mundo.",
   },
   {
     question: "Que pasa con mi empresa actual?",

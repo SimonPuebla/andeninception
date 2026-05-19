@@ -57,7 +57,7 @@ export default function FinalCTA({ onCta }: { onCta: () => void }) {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.06 }}
         >
-          Si estas construyendo algo serio desde Latam y queres operar desde una jurisdiccion digital disenada para vos, este es el momento.
+          Si estas construyendo algo serio desde Latam y queres operar desde una zona digital disenada para vos, este es el momento.
         </motion.p>
         <motion.button
           className="btn btn-lg"

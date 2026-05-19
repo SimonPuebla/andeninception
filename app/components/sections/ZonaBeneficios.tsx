@@ -4,15 +4,6 @@ import { useRef, useEffect, useState } from "react";
 
 const benefitCards = [
   {
-    stat: "10 años",
-    name: "Estabilidad fiscal garantizada",
-    body: "Las condiciones fiscales que firmas al ingresar a la zona quedan bloqueadas por una década desde tu registración. Planificas a largo plazo sin sorpresas regulatorias.",
-    baseLegal: "Ley 27.506",
-    condicion: "Sujeto a renovación de LEC o ampliación del término de LEC",
-    animate: true,
-    numValue: 10,
-  },
-  {
     stat: "Hasta 60%",
     name: "Reduccion de Ganancias",
     body: "Reduccion significativa del impuesto a las Ganancias para empresas certificadas bajo el regimen de Economia del Conocimiento.",
@@ -34,7 +25,7 @@ const benefitCards = [
     stat: "0%",
     name: "IVA en operaciones intra-zona y exterior",
     body: "Exencion total de IVA en transacciones entre empresas miembro de la zona economica y en operaciones hacia el exterior.",
-    baseLegal: "Ley 24.331",
+    baseLegal: "Ley 27.506",
     condicion: "Operaciones intra-zona y exportaciones",
     animate: false,
   },
@@ -42,7 +33,7 @@ const benefitCards = [
     stat: "0%",
     name: "Aranceles aduaneros sobre import/export",
     body: "Exencion total de derechos aduaneros sobre importaciones y exportaciones dentro del perimetro de la zona.",
-    baseLegal: "Ley 24.331",
+    baseLegal: "Ley 27.506",
     condicion: "Operaciones dentro del perimetro de la zona",
     animate: false,
   },
@@ -50,7 +41,7 @@ const benefitCards = [
     stat: "USD",
     name: "Operacion legal en moneda dura",
     body: "Tu empresa puede facturar, recibir y operar en dolares dentro del regimen de Zona Franca, sin necesidad de estructura offshore.",
-    baseLegal: "Ley 24.331",
+    baseLegal: "Ley 27.506",
     condicion: "Bajo regimen de Zona Franca",
     animate: false,
   },
@@ -128,7 +119,7 @@ export default function ZonaBeneficios() {
         >
           <span className="eyebrow eyebrow-navy">LA ZONA</span>
           <h2 className="h-display h-section" style={{ marginTop: 18, maxWidth: 900 }}>
-            Una jurisdiccion digital con beneficios fiscales reales y respaldo legal.
+            Una zona digital con beneficios reales y respaldo legal.
           </h2>
           <p className="body-lg" style={{ marginTop: 24, maxWidth: 640 }}>
             Construida sobre dos leyes argentinas vigentes: Ley 24.331 de Zonas Francas y Ley 27.506 de Economia del Conocimiento. Lo que firmas hoy, queda firme. Sin grises, sin promesas, sin nuevas leyes que esperar.
@@ -316,6 +307,23 @@ export default function ZonaBeneficios() {
             </a>
           </motion.div>
         </div>
+
+        {/* Disclaimer */}
+        <motion.p
+          style={{
+            marginTop: 48,
+            fontSize: 13,
+            lineHeight: 1.6,
+            color: "var(--ink-soft)",
+            maxWidth: 900,
+          }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+        >
+          Los beneficios fiscales y la estabilidad fiscal están sujetos a la aprobación y certificación de tu empresa en el régimen de Economía del Conocimiento (LEC) y/o Zona Franca (ZFM). Andén brinda el acompañamiento y soporte legal-operativo para esta aplicación.
+        </motion.p>
       </div>
       <style jsx>{`
         .zone-card {
