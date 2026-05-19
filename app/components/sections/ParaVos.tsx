@@ -16,7 +16,7 @@ interface ProfileCard {
 const profiles: ProfileCard[] = [
   {
     num: "01",
-    title: "Proveedor de Servicios digitales, Ciencia y tecnología",
+    title: "Proveedor de servicios basados en economía del conocimiento",
     tagline: "Software, AI, SaaS, infraestructura. Exportás servicios al mundo. Junto a biotecnología, nanotecnología, aeroespacial, nuclear, I+D (Investigación y Desarrollo), e industria 4.0. Exportás tech avanzada al futuro.",
     leftEyebrow: "DE QUE TE BENEFICIAS",
     leftItems: [
@@ -41,7 +41,7 @@ const profiles: ProfileCard[] = [
   {
     num: "02",
     title: "Empresa de servicios profesionales exportables",
-    tagline: "Estudios de diseno, consultoria, audiovisual, biotech, ingenieria. Vendes tu expertise afuera.",
+    tagline: "Estudios de diseño, consultoria, audiovisual, biotech, ingenieria. Vendes tu expertise afuera.",
     leftEyebrow: "DE QUE TE BENEFICIAS",
     leftItems: [
       "Ganancias hasta el 15% efectivo en lugar de 35% del regimen general",
