@@ -21,11 +21,13 @@ const logos = [
     name: "Aragon",
     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-zrDdfZKryuIzyvMuAqjMtfuEJgKxZx.png",
     width: 48,
+    invert: true,
   },
   {
-    name: "ANDEN",
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo%20black-yDScAjWJ2qFOJqznYXgYAioSWP1VUJ.png",
+    name: "Odisea",
+    src: "/logos/odisea.png",
     width: 120,
+    invert: true,
   },
 ];
 
@@ -97,6 +99,7 @@ export default function Ecosistema() {
                   height: "auto",
                   maxHeight: 48,
                   objectFit: "contain",
+                  filter: (logo as { invert?: boolean }).invert ? "invert(1)" : "none",
                 }}
               />
             </div>
