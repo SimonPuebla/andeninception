@@ -79,7 +79,7 @@ const profiles: ProfileCard[] = [
       "Acceso al cohort foundation como caso de estudio: prensa, credibilidad, network.",
       "Equipo Anden te acompana en la migracion: legal, contable, operativo.",
     ],
-    footer: "Estos casos son factibles pero requieren una gestión custom con análisis legal previo. Aplica para empresas con operacion consolidada, facturacion mayor a USD 1M anual, o estructura societaria internacional que queres revisar.",
+    footer: "Aplica para empresas con clientes internacionales recurrentes, facturación en USD o EUR, y al menos 70% de su facturación afectada a la Economía del Conocimiento.",
   },
 ];
 
