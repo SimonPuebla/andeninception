@@ -37,14 +37,6 @@ const benefitCards = [
     condicion: "Operaciones dentro del perimetro de la zona",
     animate: false,
   },
-  {
-    stat: "USD",
-    name: "Operacion legal en moneda dura",
-    body: "Tu empresa puede facturar, recibir y operar en dolares dentro del regimen de Zona Franca, sin necesidad de estructura offshore.",
-    baseLegal: "Ley 27.506",
-    condicion: "Bajo regimen de Zona Franca",
-    animate: false,
-  },
 ];
 
 function AnimatedStat({ card }: { card: typeof benefitCards[0] }) {
@@ -128,12 +120,12 @@ export default function ZonaBeneficios() {
 
         {/* 6-card grid: 3 + 3 */}
         <div style={{ marginTop: 64 }}>
-          {/* Row 1: 3 cards */}
+          {/* Row 1: 2 cards */}
           <div
             className="benefit-grid"
-            style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 18 }}
+            style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 18 }}
           >
-            {benefitCards.slice(0, 3).map((card, i) => (
+            {benefitCards.slice(0, 2).map((card, i) => (
               <motion.div
                 key={card.name}
                 className="zone-card"
@@ -188,17 +180,17 @@ export default function ZonaBeneficios() {
             ))}
           </div>
 
-          {/* Row 2: 3 cards */}
+          {/* Row 2: 2 cards */}
           <div
             className="benefit-grid"
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(3, 1fr)",
+              gridTemplateColumns: "repeat(2, 1fr)",
               gap: 18,
               marginTop: 18,
             }}
           >
-            {benefitCards.slice(3, 6).map((card, i) => (
+            {benefitCards.slice(2, 4).map((card, i) => (
               <motion.div
                 key={card.name}
                 className="zone-card"
@@ -213,7 +205,7 @@ export default function ZonaBeneficios() {
                 initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: (i + 3) * 0.06 }}
+                transition={{ duration: 0.8, delay: (i + 2) * 0.06 }}
               >
                 <AnimatedStat card={card} />
                 <h3

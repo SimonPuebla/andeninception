@@ -16,7 +16,7 @@ interface ProfileCard {
 const profiles: ProfileCard[] = [
   {
     num: "01",
-    title: "Proveedor de Servicios digitales, Ciencia y tecnología",
+    title: "Proveedor de servicios basados en economía del conocimiento",
     tagline: "Software, AI, SaaS, infraestructura. Exportás servicios al mundo. Junto a biotecnología, nanotecnología, aeroespacial, nuclear, I+D (Investigación y Desarrollo), e industria 4.0. Exportás tech avanzada al futuro.",
     leftEyebrow: "DE QUE TE BENEFICIAS",
     leftItems: [
@@ -32,31 +32,33 @@ const profiles: ProfileCard[] = [
     rightItems: [
       "No tenes que mudarte ni constituir en USA. Operas global desde tu pais.",
       "Acceso a una red de inversores latam y globales que no llegas solo.",
-      "Estas cerca de tu talento, tu equipo y tu mercado natural.",
       "Sumas credenciales reales: respaldo de Protocol Labs, NVIDIA, Crecimiento.",
+      "Acompañamiento en aplicación y compliance LEC y de ZFM resuelto end-to-end, sin armar un equipo legal interno.",
+      "Visibilidad institucional como parte del cohort foundation.",
     ],
     footer: "Aplica para empresas desde 5 hasta 200 empleados, early stage o growth, con al menos 60% de ingresos por exportacion de servicios.",
   },
   {
     num: "02",
     title: "Empresa de servicios profesionales exportables",
-    tagline: "Estudios de diseno, consultoria, audiovisual, biotech, ingenieria. Vendes tu expertise afuera.",
+    tagline: "Estudios de diseño, consultoria, audiovisual, biotech, ingenieria. Vendes tu expertise afuera.",
     leftEyebrow: "DE QUE TE BENEFICIAS",
     leftItems: [
       "Ganancias hasta el 15% efectivo en lugar de 35% del regimen general",
       "Reduccion de 40-80% en cargas patronales via bono de credito fiscal LEC",
       "0% de retenciones a la exportacion de servicios",
       "USD 1.5M en perks del ecosistema NVIDIA Inception y partners",
+      "Setup legal completo, aplicación y compliance recurrente bajo régimen LEC y ZFM",
       "Red de pares en industrias de conocimiento, partners y oportunidades cruzadas",
     ],
     rightEyebrow: "POR QUE ACA Y NO AFUERA",
     rightItems: [
-      "Mantenes tu equipo en Latam, sumas un vehiculo internacional sin doble estructura.",
+      "Mantene tu equipo en donde operes, sumas un vehiculo internacional sin doble estructura.",
       "Acceso a la red de inversores y demo days del cohort.",
       "Acompañamiento en aplicación y compliance LEC y de ZFM resuelto end-to-end, sin armar un equipo legal interno.",
       "Visibilidad institucional como parte del cohort foundation.",
     ],
-    footer: "Aplica para empresas con clientes internacionales recurrentes, facturacion en USD o EUR, y al menos 70% del equipo en paises latam.",
+    footer: "Aplica para empresas con clientes internacionales recurrentes, facturacion en USD o EUR. Empleados deben estar registrados en Argentina.",
   },
   {
     num: "03",
@@ -77,7 +79,7 @@ const profiles: ProfileCard[] = [
       "Acceso al cohort foundation como caso de estudio: prensa, credibilidad, network.",
       "Equipo Anden te acompana en la migracion: legal, contable, operativo.",
     ],
-    footer: "Estos casos son factibles pero requieren una gestión custom con análisis legal previo. Aplica para empresas con operacion consolidada, facturacion mayor a USD 1M anual, o estructura societaria internacional que queres revisar.",
+    footer: "Aplica para empresas con clientes internacionales recurrentes, facturación en USD o EUR, y al menos 70% de su facturación afectada a la Economía del Conocimiento.",
   },
 ];
 
