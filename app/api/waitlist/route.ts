@@ -1,6 +1,38 @@
 import { createClient } from '@/lib/supabase/server'
 import { Resend } from 'resend'
 import { NextResponse } from 'next/server'
+import crypto from 'crypto'
+
+async function notificarAnden(data: {
+  nombre: string
+  apellido: string
+  email: string
+  nombreEmpresa: string
+}) {
+  const secret = process.env.ANDEN_WEBHOOK_SECRET
+  const url = process.env.ANDEN_WEBHOOK_URL
+  if (!secret || !url) return
+
+  const payload = {
+    event: 'user.registered',
+    timestamp: Math.floor(Date.now() / 1000),
+    data,
+  }
+  const bodyString = JSON.stringify(payload)
+  const signature = crypto
+    .createHmac('sha256', secret)
+    .update(bodyString)
+    .digest('hex')
+
+  await fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'x-signature': `sha256=${signature}`,
+    },
+    body: bodyString,
+  }).catch(() => {})
+}
 
 export async function POST(request: Request) {
   try {
@@ -40,12 +72,8 @@ export async function POST(request: Request) {
       .single()
 
     if (dbError) {
-      // Check for unique constraint violation (email already exists)
       if (dbError.code === '23505') {
-        return NextResponse.json(
-          { error: 'Este email ya está registrado en la waitlist' },
-          { status: 409 }
-        )
+        return NextResponse.json({ success: true, message: 'Usuario ya registrado' })
       }
       console.error('Database error:', dbError)
       return NextResponse.json(
@@ -53,6 +81,9 @@ export async function POST(request: Request) {
         { status: 500 }
       )
     }
+
+    // Notificar a Andén vía webhook (no-bloqueante)
+    await notificarAnden({ nombre, apellido, email, nombreEmpresa: empresa })
 
     // Enviar email de bienvenida con Resend (solo si hay API key configurada)
     if (process.env.RESEND_API_KEY) {
@@ -90,7 +121,7 @@ export async function POST(request: Request) {
                     <table role="presentation" cellspacing="0" cellpadding="0" style="margin: 0 auto;">
                       <tr>
                         <td style="background-color: #E85D26; padding: 16px 32px;">
-                          <a href="https://anden.kovix.io/constitucion" style="color: #FFFFFF; text-decoration: none; font-size: 16px; font-weight: 600; display: inline-block;">
+                          <a href="https://anden.tech/auth/login?returnUrl=/onboarding/diagnostico" style="color: #FFFFFF; text-decoration: none; font-size: 16px; font-weight: 600; display: inline-block;">
                             Comenzar registro
                           </a>
                         </td>
@@ -98,7 +129,7 @@ export async function POST(request: Request) {
                     </table>
                     <p style="color: #888; font-size: 14px; line-height: 1.6; margin: 30px 0 0 0; text-align: center;">
                       Si el botón no funciona, copia y pega este enlace en tu navegador:<br>
-                      <a href="https://anden.kovix.io/constitucion" style="color: #E85D26;">https://anden.kovix.io/constitucion</a>
+                      <a href="https://anden.tech/auth/login?returnUrl=/onboarding/diagnostico" style="color: #E85D26;">https://anden.tech/auth/login?returnUrl=/onboarding/diagnostico</a>
                     </p>
                   </td>
                 </tr>
