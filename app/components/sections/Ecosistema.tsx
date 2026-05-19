@@ -19,9 +19,8 @@ const logos = [
   },
   {
     name: "Aragon",
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-zrDdfZKryuIzyvMuAqjMtfuEJgKxZx.png",
+    src: "/logos/aragon.png",
     width: 48,
-    invert: true,
   },
   {
     name: "Odisea",
