@@ -316,6 +316,23 @@ export default function ZonaBeneficios() {
             </a>
           </motion.div>
         </div>
+
+        {/* Disclaimer */}
+        <motion.p
+          style={{
+            marginTop: 48,
+            fontSize: 13,
+            lineHeight: 1.6,
+            color: "var(--ink-soft)",
+            maxWidth: 900,
+          }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+        >
+          Los beneficios fiscales y la estabilidad fiscal están sujetos a la aprobación y certificación de tu empresa en el régimen de Economía del Conocimiento (LEC) y/o Zona Franca (ZFM). Andén brinda el acompañamiento y soporte legal-operativo para esta aplicación.
+        </motion.p>
       </div>
       <style jsx>{`
         .zone-card {

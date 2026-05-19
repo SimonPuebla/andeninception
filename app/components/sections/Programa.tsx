@@ -2,11 +2,11 @@
 import { motion } from "framer-motion";
 
 const previewItems = [
-  "Jurisdiccion digital",
+  "Zona digital",
   "Beneficios fiscales",
-  "Banking en USD",
+  "Banking en USD / Stables",
   "Red de inversores",
-  "USD 1.5M en perks",
+  "USD 1.5M en perks by NVIDIA Inception y partners",
 ];
 
 export default function Programa() {

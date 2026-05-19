@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 const benefitCards = [
   {
     num: "01",
-    title: "USD 1.5M en perks de partners",
+    title: "USD 1.5M en perks by NVIDIA Inception y partners",
     body: "Beneficios tecnicos y comerciales del ecosistema NVIDIA Inception y otros partners: creditos de computo en NVIDIA Cloud Partners, descuentos de hasta 30% en hardware y 75% en software, training tecnico y acceso a la red global de inversores de NVIDIA. Disponibles para empresas que califiquen.",
     featured: true,
   },
