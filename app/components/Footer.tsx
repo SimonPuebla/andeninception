@@ -66,7 +66,7 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="mailto:contacto@anden.tech" style={{ fontSize: 14, color: "var(--cream-70)" }}>
+              <a href="mailto:simon@anden.tech" style={{ fontSize: 14, color: "var(--cream-70)" }}>
                 Contacto
               </a>
             </li>
