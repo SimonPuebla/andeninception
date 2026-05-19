@@ -85,7 +85,7 @@ export default function Hero({ onCta }: { onCta: () => void }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.12, ease: [0.2, 0.6, 0.2, 1] }}
         >
-          Un programa de constitución y lanzamiento diseñado para empresas tech latinoamericanas. Te damos la jurisdiccion, el compliance, la aplicación para la obtención de los beneficios fiscales, la red de inversores y el soporte para construir global sin mudarte. Todo en un solo lugar.
+          Un programa de constitución y lanzamiento diseñado para empresas tech latinoamericanas. Te damos la zona digital, el compliance, la aplicación para la obtención de los beneficios fiscales, la red de inversores y el soporte para construir global sin mudarte. Todo en un solo lugar.
         </motion.p>
         <motion.div
           style={{ display: "flex", flexDirection: "column", gap: 14, alignItems: "flex-start" }}

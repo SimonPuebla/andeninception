@@ -364,7 +364,7 @@ export default function ParaVos() {
           transition={{ duration: 0.8, delay: 0.24 }}
         >
           <span style={{ fontWeight: 600, color: "var(--ink)", marginRight: 6 }}>Aclaración importante:</span>
-          Los beneficios fiscales descriptos están supeditados al éxito de la aplicación al régimen correspondiente de cada país. Andén Inception acompaña el proceso, pero no garantizamos el resultado de la solicitud. La aprobación depende de las autoridades fiscales y regulatorias de cada jurisdicción.
+          Los beneficios fiscales descriptos están supeditados al éxito de la aplicación al régimen correspondiente de cada país. Andén Inception acompaña el proceso, pero no garantizamos el resultado de la solicitud. La aprobación depende de las autoridades fiscales y regulatorias de cada país.
         </motion.div>
       </div>
     </section>

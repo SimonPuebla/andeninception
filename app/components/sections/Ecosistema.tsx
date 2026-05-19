@@ -120,7 +120,7 @@ export default function Ecosistema() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.12 }}
         >
-          USD 20.000M en activos bajo gestión (AUM) de nuestros inversores respaldando el ecosistema. 10.000+ builders en la red. Las redes tech mas fuertes de Latam alineadas detras de una sola jurisdiccion.
+          USD 20.000M en activos bajo gestión (AUM) de nuestros inversores respaldando el ecosistema. 10.000+ builders en la red. Las redes tech mas fuertes de Latam alineadas detras de una sola zona digital.
         </motion.p>
       </div>
       <style jsx>{`
