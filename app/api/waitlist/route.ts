@@ -1,16 +1,24 @@
 import { NextResponse } from 'next/server'
 import crypto from 'crypto'
 
+type AndenBody = {
+  ok: boolean
+  created?: boolean
+  emailSent?: boolean
+  alreadyExists?: boolean
+  message?: string
+}
+
 async function notificarAnden(data: {
   nombre: string
   apellido: string
   email: string
   nombreEmpresa: string
-}): Promise<{ ok: boolean; status?: number; body?: unknown }> {
+}): Promise<{ ok: boolean; body?: AndenBody }> {
   const secret = process.env.ANDEN_WEBHOOK_SECRET
   if (!secret) return { ok: false }
-  const url = 'https://api.anden.kovix.io/webhooks/partner'
 
+  const url = 'https://api.anden.kovix.io/webhooks/partner'
   const payload = {
     event: 'user.registered',
     timestamp: Math.floor(Date.now() / 1000),
@@ -31,12 +39,12 @@ async function notificarAnden(data: {
       },
       body: bodyString,
     })
-    const responseBody = await res.json().catch(() => null)
+    const body: AndenBody = await res.json().catch(() => ({ ok: false }))
     if (!res.ok) {
-      console.error('Andén webhook error:', res.status, responseBody)
-      return { ok: false, status: res.status, body: responseBody }
+      console.error('Andén webhook error:', res.status, body)
+      return { ok: false }
     }
-    return { ok: true, status: res.status, body: responseBody }
+    return { ok: true, body }
   } catch (err) {
     console.error('Andén webhook fetch failed:', err)
     return { ok: false }
@@ -71,7 +79,12 @@ export async function POST(request: Request) {
       )
     }
 
-    return NextResponse.json({ success: true })
+    const andenBody = andenResult.body ?? { ok: true }
+    return NextResponse.json({
+      success: true,
+      alreadyExists: andenBody.alreadyExists ?? false,
+      emailSent: andenBody.emailSent ?? false,
+    })
   } catch (error) {
     console.error('Unexpected error:', error)
     return NextResponse.json(
