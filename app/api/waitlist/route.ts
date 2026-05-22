@@ -16,7 +16,10 @@ async function notificarAnden(data: {
   nombreEmpresa: string
 }): Promise<{ ok: boolean; body?: AndenBody }> {
   const secret = process.env.ANDEN_WEBHOOK_SECRET
-  if (!secret) return { ok: false }
+  if (!secret) {
+    console.error('ANDEN_WEBHOOK_SECRET no configurada')
+    return { ok: false }
+  }
 
   const url = 'https://api.anden.kovix.io/webhooks/partner'
   const payload = {
@@ -30,6 +33,9 @@ async function notificarAnden(data: {
     .update(bodyString)
     .digest('hex')
 
+  const controller = new AbortController()
+  const timeout = setTimeout(() => controller.abort(), 8000)
+
   try {
     const res = await fetch(url, {
       method: 'POST',
@@ -38,7 +44,9 @@ async function notificarAnden(data: {
         'x-signature': `sha256=${signature}`,
       },
       body: bodyString,
+      signal: controller.signal,
     })
+    clearTimeout(timeout)
     const body: AndenBody = await res.json().catch(() => ({ ok: false }))
     if (!res.ok) {
       console.error('Andén webhook error:', res.status, body)
@@ -46,50 +54,50 @@ async function notificarAnden(data: {
     }
     return { ok: true, body }
   } catch (err) {
-    console.error('Andén webhook fetch failed:', err)
+    clearTimeout(timeout)
+    const isTimeout = err instanceof Error && err.name === 'AbortError'
+    console.error(isTimeout ? 'Andén webhook timeout' : 'Andén webhook fetch failed:', err)
     return { ok: false }
   }
 }
 
 export async function POST(request: Request) {
+  let body: unknown
   try {
-    const body = await request.json()
-    const { nombre, apellido, email, empresa } = body
+    body = await request.json()
+  } catch {
+    return NextResponse.json({ error: 'Body inválido' }, { status: 400 })
+  }
 
-    if (!nombre || !apellido || !email || !empresa) {
-      return NextResponse.json(
-        { error: 'Todos los campos son requeridos' },
-        { status: 400 }
-      )
-    }
+  const { nombre, apellido, email, empresa } = body as Record<string, string>
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    if (!emailRegex.test(email)) {
-      return NextResponse.json(
-        { error: 'El formato del email no es válido' },
-        { status: 400 }
-      )
-    }
-
-    const andenResult = await notificarAnden({ nombre, apellido, email, nombreEmpresa: empresa })
-    if (!andenResult.ok) {
-      return NextResponse.json(
-        { error: 'No se pudo completar el registro en la plataforma. Por favor, intentá de nuevo.' },
-        { status: 502 }
-      )
-    }
-
-    const andenBody = andenResult.body ?? { ok: true }
-    return NextResponse.json({
-      success: true,
-      alreadyExists: andenBody.alreadyExists ?? false,
-      emailSent: andenBody.emailSent ?? false,
-    })
-  } catch (error) {
-    console.error('Unexpected error:', error)
+  if (!nombre || !apellido || !email || !empresa) {
     return NextResponse.json(
-      { error: 'Error interno del servidor' },
-      { status: 500 }
+      { error: 'Todos los campos son requeridos' },
+      { status: 400 }
     )
   }
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  if (!emailRegex.test(email)) {
+    return NextResponse.json(
+      { error: 'El formato del email no es válido' },
+      { status: 400 }
+    )
+  }
+
+  const andenResult = await notificarAnden({ nombre, apellido, email, nombreEmpresa: empresa })
+  if (!andenResult.ok) {
+    return NextResponse.json(
+      { error: 'No se pudo completar el registro en la plataforma. Por favor, intentá de nuevo.' },
+      { status: 502 }
+    )
+  }
+
+  const andenBody = andenResult.body ?? { ok: true }
+  return NextResponse.json({
+    success: true,
+    alreadyExists: andenBody.alreadyExists ?? false,
+    emailSent: andenBody.emailSent ?? false,
+  })
 }
