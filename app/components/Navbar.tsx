@@ -32,12 +32,12 @@ export default function Navbar({ onCta }: { onCta: () => void }) {
     >
       <a href="#top" style={{ display: "flex", alignItems: "center", gap: 12 }}>
         <img
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo%20black-yDScAjWJ2qFOJqznYXgYAioSWP1VUJ.png"
+          src="/logos/logo-2.png"
           alt="ANDEN"
           style={{
             height: 24,
             width: "auto",
-            filter: solid ? "none" : "invert(1) brightness(2)",
+            filter: "none",
             transition: "filter 0.25s ease",
           }}
         />
