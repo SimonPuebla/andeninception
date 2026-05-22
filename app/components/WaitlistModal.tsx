@@ -17,7 +17,10 @@ export default function WaitlistModal({ open, onClose }: { open: boolean; onClos
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [success, setSuccess] = useState(false);
+  const [successState, setSuccessState] = useState<{
+    alreadyExists: boolean;
+    emailSent: boolean;
+  } | null>(null);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
@@ -49,7 +52,10 @@ export default function WaitlistModal({ open, onClose }: { open: boolean; onClos
         return;
       }
 
-      setSuccess(true);
+      setSuccessState({
+        alreadyExists: data.alreadyExists ?? false,
+        emailSent: data.emailSent ?? false,
+      });
     } catch {
       setError("Error de conexión. Por favor, intenta de nuevo.");
     } finally {
@@ -60,7 +66,7 @@ export default function WaitlistModal({ open, onClose }: { open: boolean; onClos
   const handleClose = () => {
     setForm({ nombre: "", apellido: "", email: "", empresa: "" });
     setError(null);
-    setSuccess(false);
+    setSuccessState(null);
     onClose();
   };
 
@@ -106,23 +112,46 @@ export default function WaitlistModal({ open, onClose }: { open: boolean; onClos
           }}
         >✕</button>
 
-        {success ? (
+        {successState ? (
           <div style={{ textAlign: "center" }}>
             <div style={{
               width: 64, height: 64, borderRadius: "50%",
-              background: "var(--orange)", margin: "0 auto 24px",
+              background: successState.alreadyExists ? "var(--ink-soft)" : "var(--orange)",
+              margin: "0 auto 24px",
               display: "grid", placeItems: "center",
             }}>
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--bone)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <polyline points="20 6 9 17 4 12" />
               </svg>
             </div>
-            <h3 className="h-display" style={{ fontSize: 26, marginBottom: 16 }}>
-              ¡Registro exitoso!
-            </h3>
-            <p style={{ color: "var(--ink-soft)", fontSize: 15.5, marginBottom: 24, lineHeight: 1.6 }}>
-              Te enviamos un email a <strong>{form.email}</strong> con el enlace para comenzar tu registro en la plataforma.
-            </p>
+            {successState.alreadyExists ? (
+              <>
+                <h3 className="h-display" style={{ fontSize: 26, marginBottom: 16 }}>
+                  Ya tenés una cuenta
+                </h3>
+                <p style={{ color: "var(--ink-soft)", fontSize: 15.5, marginBottom: 24, lineHeight: 1.6 }}>
+                  El email <strong>{form.email}</strong> ya tiene una cuenta en Andén. Ingresá con ese email en <strong>anden.kovix.io</strong>.
+                </p>
+              </>
+            ) : successState.emailSent ? (
+              <>
+                <h3 className="h-display" style={{ fontSize: 26, marginBottom: 16 }}>
+                  ¡Listo! Revisá tu email
+                </h3>
+                <p style={{ color: "var(--ink-soft)", fontSize: 15.5, marginBottom: 24, lineHeight: 1.6 }}>
+                  Te enviamos un email a <strong>{form.email}</strong> con tus credenciales y el link para comenzar el onboarding.
+                </p>
+              </>
+            ) : (
+              <>
+                <h3 className="h-display" style={{ fontSize: 26, marginBottom: 16 }}>
+                  ¡Cuenta creada!
+                </h3>
+                <p style={{ color: "var(--ink-soft)", fontSize: 15.5, marginBottom: 24, lineHeight: 1.6 }}>
+                  Tu cuenta fue creada. El email con tus credenciales puede demorar unos minutos en llegar.
+                </p>
+              </>
+            )}
             <button
               onClick={handleClose}
               style={{
