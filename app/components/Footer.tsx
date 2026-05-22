@@ -17,12 +17,12 @@ export default function Footer() {
         <div>
           <a href="#top" style={{ display: "flex", alignItems: "center" }}>
             <img
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo%20black-yDScAjWJ2qFOJqznYXgYAioSWP1VUJ.png"
+              src="/logos/logo-2.png"
               alt="ANDEN"
               style={{
                 height: 28,
                 width: "auto",
-                filter: "invert(1) brightness(2)",
+                filter: "none",
               }}
             />
           </a>
