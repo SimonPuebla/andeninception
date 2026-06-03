@@ -28,6 +28,23 @@ const benefitCards = [
     title: "Construi la zona desde adentro",
     body: "Las decisiones de producto, regulacion y diseno de la zona se toman con feedback del cohort. No vas a ser cliente. Vas a ser arquitecto de la primera zona digital de Latam.",
   },
+  {
+    num: "06",
+    title: "HubSpot for Startups — hasta 90% OFF",
+    body: "Plataforma unificada de marketing, ventas y operaciones con AI integrada. Acceso a recursos exclusivos para startups: playbooks, templates y más de 1.700 integraciones. Pagás una fracción de lo que pagan otras empresas.",
+    logo: "/logos/hubspot.png",
+    logoAlt: "HubSpot for Startups",
+    logoWidth: 130,
+  },
+  {
+    num: "07",
+    title: "CommonPaper — contratos sin fricción",
+    body: "Enviá contratos legales estándar (NDA, partnerships, ventas y más) en minutos. Andén Companies acceden gratuitamente a la plataforma para cerrar acuerdos comerciales sin necesitar un equipo legal propio.",
+    logo: "/logos/common-paper.png",
+    logoAlt: "CommonPaper",
+    logoWidth: 130,
+    logoDark: true,
+  },
 ];
 
 export default function LoQueIncluye() {
@@ -45,7 +62,7 @@ export default function LoQueIncluye() {
         >
           <span className="eyebrow eyebrow-navy">LO QUE RECIBIS</span>
           <h2 className="h-display h-section" style={{ marginTop: 18, maxWidth: 800 }}>
-            Cinco cosas que solo el cohort foundation se lleva.
+            Siete cosas que solo el cohort foundation se lleva.
           </h2>
         </motion.div>
 
@@ -222,6 +239,73 @@ export default function LoQueIncluye() {
                 <p style={{ fontSize: 15.5, lineHeight: 1.6, color: "var(--ink-soft)" }}>{card.body}</p>
               </motion.div>
             ))}
+          </div>
+
+          {/* Cards 06 + 07 — Partner cards */}
+          <div className="card-pair" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 18 }}>
+            {benefitCards.slice(5, 7).map((card, i) => {
+              const c = card as typeof card & { logo?: string; logoAlt?: string; logoWidth?: number; logoDark?: boolean };
+              return (
+                <motion.div
+                  key={card.num}
+                  className="benefit-card"
+                  style={{
+                    background: "var(--bone)",
+                    border: "1px solid rgba(14,14,20,0.08)",
+                    padding: "38px 36px",
+                    display: "flex",
+                    flexDirection: "column",
+                    minHeight: 280,
+                    position: "relative",
+                  }}
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: (i + 5) * 0.06 }}
+                >
+                  <span
+                    className="font-display"
+                    style={{
+                      fontSize: 14,
+                      fontWeight: 700,
+                      letterSpacing: "0.08em",
+                      color: "var(--orange)",
+                      marginBottom: 18,
+                    }}
+                  >
+                    {card.num}
+                  </span>
+                  <h3
+                    className="h-display"
+                    style={{
+                      fontSize: 24,
+                      letterSpacing: "-0.015em",
+                      lineHeight: 1.18,
+                      marginBottom: 16,
+                      color: "var(--ink)",
+                    }}
+                  >
+                    {card.title}
+                  </h3>
+                  <p style={{ fontSize: 15.5, lineHeight: 1.6, color: "var(--ink-soft)" }}>{card.body}</p>
+                  {c.logo && (
+                    <div style={{ marginTop: "auto", paddingTop: 24 }}>
+                      <img
+                        src={c.logo}
+                        alt={c.logoAlt}
+                        style={{
+                          height: 36,
+                          width: "auto",
+                          maxWidth: c.logoWidth,
+                          objectFit: "contain",
+                          filter: c.logoDark ? "brightness(0)" : "none",
+                        }}
+                      />
+                    </div>
+                  )}
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </div>
