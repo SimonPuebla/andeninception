@@ -28,6 +28,17 @@ const logos = [
     width: 120,
     invert: true,
   },
+  {
+    name: "HubSpot for Startups",
+    src: "/logos/hubspot.png",
+    width: 140,
+  },
+  {
+    name: "CommonPaper",
+    src: "/logos/common-paper.png",
+    width: 140,
+    invert: true,
+  },
 ];
 
 export default function Ecosistema() {
