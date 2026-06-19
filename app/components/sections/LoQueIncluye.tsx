@@ -39,11 +39,45 @@ const benefitCards = [
   {
     num: "07",
     title: "CommonPaper — contratos sin fricción",
-    body: "Enviá contratos legales estándar (NDA, partnerships, ventas y más) en minutos. Andén Companies acceden gratuitamente a la plataforma para cerrar acuerdos comerciales sin necesitar un equipo legal propio.",
+    body: "Infraestructura de contratos para tus primeros acuerdos (NDA, partnerships, ventas y más). Acceso al plan gratuito: generación de documentos vía templates, facturación automática, alertas de actividad de clientes y hasta 2 acuerdos por mes.",
     logo: "/logos/common-paper.png",
     logoAlt: "CommonPaper",
     logoWidth: 130,
     logoDark: true,
+  },
+  {
+    num: "08",
+    title: "Carta — cap table y equity sin fricción",
+    body: "Referrals de Andén reciben 20% de descuento el primer año y exención de fees de implementación. Empresas que levantaron menos de USD 1M y tienen menos de 25 stakeholders acceden gratis al producto Launch para gestionar su cap table.",
+    logo: "/logos/carta.png",
+    logoAlt: "Carta",
+    logoWidth: 110,
+    logoDark: true,
+  },
+  {
+    num: "09",
+    title: "Atlassian — hasta 50 asientos gratis",
+    body: "Jira, Confluence y el stack de productividad de Atlassian: hasta 50 asientos gratis por 12 meses para organizar el trabajo de tu equipo, planificar proyectos y escalar operaciones desde el día uno.",
+    logo: "/logos/atlassian.png",
+    logoAlt: "Atlassian",
+    logoWidth: 140,
+  },
+  {
+    num: "10",
+    title: "Linear — 3 meses gratis",
+    body: "Gestión de proyectos y producto para equipos de software modernos: issue y bug tracking, planificación de roadmaps, delegación de tareas a agentes AI e integraciones con GitHub, Cursor, Slack y más. Aplicá el código buildwithanden al registrarte.",
+    logo: "/logos/linear.png",
+    logoAlt: "Linear",
+    logoWidth: 120,
+    logoDark: true,
+  },
+  {
+    num: "11",
+    title: "Anthropic — partner program para empresas Claude-enabled",
+    body: "Acceso al partner program de Anthropic: Partner Academy, exámenes de certificación, Claude Partner Badge, perfil en el Partner Directory, co-sell support, deal referral program y early access al roadmap del producto.",
+    logo: "/logos/anthropic.png",
+    logoAlt: "Anthropic",
+    logoWidth: 44,
   },
 ];
 
@@ -62,7 +96,7 @@ export default function LoQueIncluye() {
         >
           <span className="eyebrow eyebrow-navy">LO QUE RECIBIS</span>
           <h2 className="h-display h-section" style={{ marginTop: 18, maxWidth: 800 }}>
-            Siete cosas que solo el cohort foundation se lleva.
+            Once cosas que solo el cohort foundation se lleva.
           </h2>
         </motion.div>
 
@@ -241,9 +275,9 @@ export default function LoQueIncluye() {
             ))}
           </div>
 
-          {/* Cards 06 + 07 — Partner cards */}
+          {/* Cards 06–11 — Partner cards */}
           <div className="card-pair" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 18 }}>
-            {benefitCards.slice(5, 7).map((card, i) => {
+            {benefitCards.slice(5).map((card, i) => {
               const c = card as typeof card & { logo?: string; logoAlt?: string; logoWidth?: number; logoDark?: boolean };
               return (
                 <motion.div
