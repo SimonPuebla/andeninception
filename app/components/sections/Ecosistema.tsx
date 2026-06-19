@@ -39,6 +39,26 @@ const logos = [
     width: 140,
     invert: true,
   },
+  {
+    name: "Carta",
+    src: "/logos/carta.png",
+    width: 110,
+  },
+  {
+    name: "Atlassian",
+    src: "/logos/atlassian.png",
+    width: 140,
+  },
+  {
+    name: "Linear",
+    src: "/logos/linear.png",
+    width: 120,
+  },
+  {
+    name: "Anthropic",
+    src: "/logos/anthropic.png",
+    width: 44,
+  },
 ];
 
 export default function Ecosistema() {
@@ -67,10 +87,10 @@ export default function Ecosistema() {
           style={{
             marginTop: 64,
             display: "grid",
-            gridTemplateColumns: `repeat(${logos.length}, 1fr)`,
+            gridTemplateColumns: "repeat(4, 1fr)",
             gap: 0,
             borderTop: "1px solid var(--ink-line)",
-            borderBottom: "1px solid var(--ink-line)",
+            borderLeft: "1px solid var(--ink-line)",
           }}
           initial={{ opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -85,7 +105,8 @@ export default function Ecosistema() {
                 alignItems: "center",
                 justifyContent: "center",
                 padding: "32px 20px",
-                borderLeft: i === 0 ? "none" : "1px solid var(--ink-line)",
+                borderRight: "1px solid var(--ink-line)",
+                borderBottom: "1px solid var(--ink-line)",
                 position: "relative",
                 minHeight: 100,
               }}
@@ -141,16 +162,10 @@ export default function Ecosistema() {
           .logo-grid {
             grid-template-columns: repeat(2, 1fr) !important;
           }
-          .logo-grid > div:nth-child(odd) {
-            border-left: none !important;
-          }
         }
         @media (max-width: 480px) {
           .logo-grid {
             grid-template-columns: 1fr !important;
-          }
-          .logo-grid > div {
-            border-left: none !important;
           }
         }
       `}</style>
