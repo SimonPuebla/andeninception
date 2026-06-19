@@ -59,6 +59,11 @@ const logos = [
     src: "/logos/anthropic.png",
     width: 44,
   },
+  {
+    name: "Embarca",
+    src: "/logos/embarca.png",
+    width: 130,
+  },
 ];
 
 export default function Ecosistema() {
