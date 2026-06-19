@@ -15,8 +15,8 @@ const logos = [
   { name: "HubSpot for Startups", src: "/logos/hubspot.png", width: 110 },
   { name: "CommonPaper", src: "/logos/common-paper.png", width: 116 },
   { name: "Carta", src: "/logos/carta.png", width: 84 },
-  { name: "Atlassian", src: "/logos/atlassian.png", width: 116 },
-  { name: "Linear", src: "/logos/linear.png", width: 100 },
+  { name: "Atlassian", src: "/logos/atlassian.png", width: 160, maxHeight: 40 },
+  { name: "Linear", src: "/logos/linear.png", width: 140, maxHeight: 40 },
   { name: "Anthropic", src: "/logos/anthropic.png", width: 30 },
   { name: "Embarca", src: "/logos/embarca.png", width: 110 },
 ];
@@ -163,7 +163,7 @@ export default function Hero({ onCta }: { onCta: () => void }) {
                   style={{
                     width: logo.width,
                     height: "auto",
-                    maxHeight: 28,
+                    maxHeight: (logo as { maxHeight?: number }).maxHeight ?? 28,
                     objectFit: "contain",
                     filter: "brightness(0) invert(1)",
                     opacity: 0.85,
