@@ -12,6 +12,7 @@ import FAQ from "./components/sections/FAQ";
 import FinalCTA from "./components/sections/FinalCTA";
 import Footer from "./components/Footer";
 import WaitlistModal from "./components/WaitlistModal";
+import { LanguageProvider } from "./i18n/LanguageContext";
 
 export default function Home() {
   const [open, setOpen] = useState(false);
@@ -26,18 +27,20 @@ export default function Home() {
   }, [open]);
 
   return (
-    <main>
-      <Navbar onCta={openModal} />
-      <Hero onCta={openModal} />
-      <Programa />
-      <ParaVos />
-      <LoQueIncluye />
-      <ZonaBeneficios />
-      <Ecosistema />
-      <FAQ />
-      <FinalCTA onCta={openModal} />
-      <Footer />
-      <WaitlistModal open={open} onClose={closeModal} />
-    </main>
+    <LanguageProvider>
+      <main>
+        <Navbar onCta={openModal} />
+        <Hero onCta={openModal} />
+        <Programa />
+        <ParaVos />
+        <LoQueIncluye />
+        <ZonaBeneficios />
+        <Ecosistema />
+        <FAQ />
+        <FinalCTA onCta={openModal} />
+        <Footer />
+        <WaitlistModal open={open} onClose={closeModal} />
+      </main>
+    </LanguageProvider>
   );
 }
