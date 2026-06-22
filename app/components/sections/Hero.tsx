@@ -1,7 +1,25 @@
 "use client";
 import { motion } from "framer-motion";
 
-const logos = ["Protocol Labs", "Aragon", "Odisea", "NVIDIA Inception", "Crecimiento"];
+const logos = [
+  {
+    name: "NVIDIA Inception",
+    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/nvidia-inception-program-badge-rgb-for-screen-secDj7L93PLi5AMDemCe8TX1VPREWl.jpg",
+    width: 120,
+    badge: true,
+  },
+  { name: "Protocol Labs", src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-w84ATr6iobbAzDOA0tuKmX0Z4mcooR.png", width: 120 },
+  { name: "Prospera", src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/LOGO-5gAKFMl2NjtoUf0qC0DvQQjdHnFtrd.png", width: 38 },
+  { name: "Aragon", src: "/logos/aragon.png", width: 36 },
+  { name: "Odisea", src: "/logos/odisea.png", width: 96 },
+  { name: "HubSpot for Startups", src: "/logos/hubspot.png", width: 110 },
+  { name: "CommonPaper", src: "/logos/common-paper.png", width: 116 },
+  { name: "Carta", src: "/logos/carta.png", width: 84 },
+  { name: "Atlassian", src: "/logos/atlassian.png", width: 160, maxHeight: 40 },
+  { name: "Linear", src: "/logos/linear.png", width: 140, maxHeight: 40 },
+  { name: "Anthropic", src: "/logos/anthropic.png", width: 30 },
+  { name: "Embarca", src: "/logos/embarca.png", width: 110 },
+];
 
 export default function Hero({ onCta }: { onCta: () => void }) {
   return (
@@ -114,32 +132,45 @@ export default function Hero({ onCta }: { onCta: () => void }) {
           <div
             className="logo-row"
             style={{
-              marginTop: 20,
+              marginTop: 24,
               display: "flex",
               alignItems: "center",
-              gap: 32,
+              gap: "28px 40px",
               flexWrap: "wrap",
             }}
           >
-            {logos.map((name, i) => (
-              <div key={name} style={{ display: "flex", alignItems: "center", gap: 32 }}>
-                <span
+            {logos.map((logo) =>
+              logo.badge ? (
+                <img
+                  key={logo.name}
+                  src={logo.src}
+                  alt={logo.name}
                   style={{
-                    fontFamily: "Space Grotesk, sans-serif",
-                    fontWeight: 600,
-                    fontSize: 14,
-                    color: "var(--cream)",
-                    opacity: 0.8,
-                    letterSpacing: "-0.01em",
+                    width: logo.width,
+                    height: "auto",
+                    maxHeight: 40,
+                    objectFit: "contain",
+                    background: "white",
+                    padding: "4px 7px",
+                    borderRadius: 2,
                   }}
-                >
-                  {name}
-                </span>
-                {i < logos.length - 1 && (
-                  <span style={{ width: 4, height: 4, background: "var(--cream)", opacity: 0.4, borderRadius: "50%" }} />
-                )}
-              </div>
-            ))}
+                />
+              ) : (
+                <img
+                  key={logo.name}
+                  src={logo.src}
+                  alt={logo.name}
+                  style={{
+                    width: logo.width,
+                    height: "auto",
+                    maxHeight: (logo as { maxHeight?: number }).maxHeight ?? 28,
+                    objectFit: "contain",
+                    filter: "brightness(0) invert(1)",
+                    opacity: 0.85,
+                  }}
+                />
+              )
+            )}
           </div>
         </motion.div>
       </div>

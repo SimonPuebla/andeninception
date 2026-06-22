@@ -79,6 +79,14 @@ const benefitCards = [
     logoAlt: "Anthropic",
     logoWidth: 44,
   },
+  {
+    num: "12",
+    title: "Embarca — espacio de trabajo físico",
+    body: "6 puestos disponibles de manera garantizada; a partir de ese número la disponibilidad se evalúa caso por caso. Pagás 11 meses por adelantado y accedés a 12 meses de uso del espacio con todos los beneficios del paquete Full. El valor de la suscripción se define según el mes de inicio del contrato.",
+    logo: "/logos/embarca.png",
+    logoAlt: "Embarca",
+    logoWidth: 130,
+  },
 ];
 
 export default function LoQueIncluye() {
@@ -96,7 +104,7 @@ export default function LoQueIncluye() {
         >
           <span className="eyebrow eyebrow-navy">LO QUE RECIBIS</span>
           <h2 className="h-display h-section" style={{ marginTop: 18, maxWidth: 800 }}>
-            Once cosas que solo el cohort foundation se lleva.
+            Doce cosas que solo el cohort foundation se lleva.
           </h2>
         </motion.div>
 
