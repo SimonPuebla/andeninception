@@ -21,7 +21,7 @@ async function notificarAnden(data: {
     return { ok: false }
   }
 
-  const baseUrl = process.env.ANDEN_API_BASE_URL ?? 'https://api.anden.kovix.io'
+  const baseUrl = process.env.ANDEN_API_BASE_URL ?? 'https://api.anden.tech'
   const url = `${baseUrl}/webhooks/partner`
   const payload = {
     event: 'user.registered',
