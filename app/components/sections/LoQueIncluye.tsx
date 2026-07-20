@@ -87,6 +87,14 @@ const benefitCards = [
     logoAlt: "Embarca",
     logoWidth: 130,
   },
+  {
+    num: "13",
+    title: "Fil One — almacenamiento S3 descentralizado",
+    body: "Almacenamiento de objetos compatible con S3 construido sobre Filecoin con integridad verificada criptográficamente, sin bloqueo de proveedor único, y durabilidad de 11 nines por diseño. USD 4,99/TB/mes plano sin fees de egreso ni cargos por solicitud — ideal para agentes de AI, pipelines RAG, backups, y datos que deben sobrevivir a su proveedor. 3 meses gratis, hasta 5 TB por mes.",
+    logo: "/logos/fil-one.svg",
+    logoAlt: "Fil One",
+    logoWidth: 100,
+  },
 ];
 
 export default function LoQueIncluye() {
@@ -104,7 +112,7 @@ export default function LoQueIncluye() {
         >
           <span className="eyebrow eyebrow-navy">LO QUE RECIBIS</span>
           <h2 className="h-display h-section" style={{ marginTop: 18, maxWidth: 800 }}>
-            Doce cosas que solo el cohort foundation se lleva.
+            Trece cosas que solo el cohort foundation se lleva.
           </h2>
         </motion.div>
 
@@ -283,7 +291,7 @@ export default function LoQueIncluye() {
             ))}
           </div>
 
-          {/* Cards 06–11 — Partner cards */}
+          {/* Cards 06–13 — Partner cards */}
           <div className="card-pair" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 18 }}>
             {benefitCards.slice(5).map((card, i) => {
               const c = card as typeof card & { logo?: string; logoAlt?: string; logoWidth?: number; logoDark?: boolean };
