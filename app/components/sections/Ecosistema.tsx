@@ -1,6 +1,5 @@
 "use client";
 import { motion } from "framer-motion";
-import { useLanguage } from "../i18n/LanguageContext";
 
 const logos = [
   {
@@ -65,15 +64,9 @@ const logos = [
     src: "/logos/embarca.png",
     width: 130,
   },
-  {
-    name: "Fil One",
-    src: "/logos/fil-one.svg",
-    width: 100,
-  },
 ];
 
 export default function Ecosistema() {
-  const { t } = useLanguage();
   return (
     <section
       id="ecosistema"
@@ -87,9 +80,9 @@ export default function Ecosistema() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <span className="eyebrow eyebrow-navy">{t.ecosistema.eyebrow}</span>
+          <span className="eyebrow eyebrow-navy">ECOSISTEMA</span>
           <h2 className="h-display h-section" style={{ marginTop: 18 }}>
-            {t.ecosistema.title}
+            Construido con los actores que ya estan construyendo el futuro.
           </h2>
         </motion.div>
 
@@ -166,7 +159,7 @@ export default function Ecosistema() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.12 }}
         >
-          {t.ecosistema.stats}
+          USD 20.000M en activos bajo gestión (AUM) de nuestros inversores respaldando el ecosistema. 10.000+ builders en la red. Las redes tech mas fuertes de Latam alineadas detras de una sola zona digital.
         </motion.p>
       </div>
       <style jsx>{`

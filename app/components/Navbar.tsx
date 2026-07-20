@@ -1,9 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
-import { useLanguage, LanguageToggle } from "../i18n/LanguageContext";
 
 export default function Navbar({ onCta }: { onCta: () => void }) {
-  const { t } = useLanguage();
   const [solid, setSolid] = useState(false);
   useEffect(() => {
     const onScroll = () => setSolid(window.scrollY > 80);
@@ -47,10 +45,10 @@ export default function Navbar({ onCta }: { onCta: () => void }) {
       <div style={{ display: "flex", alignItems: "center", gap: 32 }}>
         <div className="nav-links" style={{ display: "flex", gap: 28 }}>
           {[
-            ["#programa", t.nav.programa],
-            ["#para-vos", t.nav.paraVos],
-            ["#beneficios", t.nav.beneficios],
-            ["#faq", t.nav.faq],
+            ["#programa", "Programa"],
+            ["#para-vos", "Para vos"],
+            ["#beneficios", "Beneficios"],
+            ["#faq", "FAQ"],
           ].map(([href, label]) => (
             <a
               key={href}
@@ -61,9 +59,8 @@ export default function Navbar({ onCta }: { onCta: () => void }) {
             </a>
           ))}
         </div>
-        <LanguageToggle tone={solid ? "dark" : "light"} />
         <button className="btn" onClick={onCta}>
-          {t.nav.cta}
+          Sumate al waitlist
         </button>
       </div>
       <style jsx>{`
