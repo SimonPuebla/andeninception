@@ -64,6 +64,11 @@ const logos = [
     src: "/logos/embarca.png",
     width: 130,
   },
+  {
+    name: "Fil One",
+    src: "/logos/fil-one.svg",
+    width: 100,
+  },
 ];
 
 export default function Ecosistema() {
