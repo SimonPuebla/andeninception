@@ -167,6 +167,10 @@ const es = {
         title: "Embarca — espacio de trabajo físico",
         body: "6 puestos disponibles de manera garantizada; a partir de ese número la disponibilidad se evalúa caso por caso. Pagás 11 meses por adelantado y accedés a 12 meses de uso del espacio con todos los beneficios del paquete Full. El valor de la suscripción se define según el mes de inicio del contrato.",
       },
+      {
+        title: "Fil One — almacenamiento S3 descentralizado",
+        body: "Almacenamiento de objetos compatible con S3 construido sobre Filecoin con integridad verificada criptográficamente, sin bloqueo de proveedor único, y durabilidad de 11 nines por diseño. USD 4,99/TB/mes plano sin fees de egreso ni cargos por solicitud — ideal para agentes de AI, pipelines RAG, backups, y datos que deben sobrevivir a su proveedor. 3 meses gratis, hasta 5 TB por mes (un valor de US$74,85).",
+      },
     ],
   },
   zona: {
@@ -481,6 +485,10 @@ const en: typeof es = {
       {
         title: "Embarca — physical workspace",
         body: "6 guaranteed desks available; beyond that number, availability is assessed case by case. You pay 11 months up front and get 12 months of space access with all the benefits of the Full package. The subscription price is set based on the contract's start month.",
+      },
+      {
+        title: "Fil One — decentralized S3 storage",
+        body: "S3-compatible object storage built on Filecoin with cryptographically verified integrity, no single-provider lock-in, and 11 nines durability by design. Flat USD 4.99/TB/month with no egress fees or per-request charges — ideal for AI agents, RAG pipelines, backups, and data that must outlive its provider. 3 months free, up to 5 TB/month (USD 74.85 value).",
       },
     ],
   },

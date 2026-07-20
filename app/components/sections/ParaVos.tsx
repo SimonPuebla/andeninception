@@ -1,6 +1,7 @@
 "use client";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
+import { useLanguage } from "../i18n/LanguageContext";
 
 interface ProfileCard {
   num: string;
@@ -12,76 +13,6 @@ interface ProfileCard {
   rightItems: string[];
   footer: string;
 }
-
-const profiles: ProfileCard[] = [
-  {
-    num: "01",
-    title: "Proveedor de servicios basados en economía del conocimiento",
-    tagline: "Software, AI, SaaS, infraestructura. Exportás servicios al mundo. Junto a biotecnología, nanotecnología, aeroespacial, nuclear, I+D (Investigación y Desarrollo), e industria 4.0. Exportás tech avanzada al futuro.",
-    leftEyebrow: "DE QUE TE BENEFICIAS",
-    leftItems: [
-      "Ganancias hasta el 15% efectivo en lugar de 35% del regimen general",
-      "Reduccion de 40-80% en cargas patronales via bono de credito fiscal LEC",
-      "0% de retenciones a la exportacion de servicios",
-      "Operacion legal en USD bajo regimen de Zona Franca",
-      "USD 1.5M en perks del ecosistema NVIDIA Inception y partners",
-      "Setup legal completo, aplicación y compliance recurrente bajo régimen LEC y ZFM",
-      "Red de pares en industrias de conocimiento, partners y oportunidades cruzadas",
-    ],
-    rightEyebrow: "POR QUE ACA Y NO AFUERA",
-    rightItems: [
-      "No tenes que mudarte ni constituir en USA. Operas global desde tu pais.",
-      "Acceso a una red de inversores latam y globales que no llegas solo.",
-      "Sumas credenciales reales: respaldo de Protocol Labs, NVIDIA, Crecimiento.",
-      "Acompañamiento en aplicación y compliance LEC y de ZFM resuelto end-to-end, sin armar un equipo legal interno.",
-      "Visibilidad institucional como parte del cohort foundation.",
-    ],
-    footer: "Aplica para empresas desde 5 hasta 200 empleados, early stage o growth, con al menos 60% de ingresos por exportacion de servicios.",
-  },
-  {
-    num: "02",
-    title: "Empresa de servicios profesionales exportables",
-    tagline: "Estudios de diseño, consultoria, audiovisual, biotech, ingenieria. Vendes tu expertise afuera.",
-    leftEyebrow: "DE QUE TE BENEFICIAS",
-    leftItems: [
-      "Ganancias hasta el 15% efectivo en lugar de 35% del regimen general",
-      "Reduccion de 40-80% en cargas patronales via bono de credito fiscal LEC",
-      "0% de retenciones a la exportacion de servicios",
-      "USD 1.5M en perks del ecosistema NVIDIA Inception y partners",
-      "Setup legal completo, aplicación y compliance recurrente bajo régimen LEC y ZFM",
-      "Red de pares en industrias de conocimiento, partners y oportunidades cruzadas",
-    ],
-    rightEyebrow: "POR QUE ACA Y NO AFUERA",
-    rightItems: [
-      "Mantene tu equipo en donde operes, sumas un vehiculo internacional sin doble estructura.",
-      "Acceso a la red de inversores y demo days del cohort.",
-      "Acompañamiento en aplicación y compliance LEC y de ZFM resuelto end-to-end, sin armar un equipo legal interno.",
-      "Visibilidad institucional como parte del cohort foundation.",
-    ],
-    footer: "Aplica para empresas con clientes internacionales recurrentes, facturacion en USD o EUR. Empleados deben estar registrados en Argentina.",
-  },
-  {
-    num: "03",
-    title: "Empresa establecida buscando optimizar estructura",
-    tagline: "Ya operas. Tenes LEC sin aprovechar, holding offshore costoso o estructura suboptima.",
-    leftEyebrow: "DE QUE TE BENEFICIAS",
-    leftItems: [
-      "Ganancias hasta el 15% efectivo en lugar de 35% del regimen general",
-      "Reduccion de 40-80% en cargas patronales via bono de credito fiscal LEC",
-      "0% de retenciones a la exportacion de servicios",
-      "Setup legal completo, aplicación y compliance recurrente bajo régimen LEC y ZFM",
-      "Red de pares en industrias de conocimiento, partners y oportunidades cruzadas",
-    ],
-    rightEyebrow: "POR QUE ACA Y NO AFUERA",
-    rightItems: [
-      "Tu holding en USA o Caymans te cuesta 30-80K USD anuales sin upside fiscal real.",
-      "0% retenciones a la exportacion: cobras lo que facturas, sin scraping fiscal.",
-      "Acceso al cohort foundation como caso de estudio: prensa, credibilidad, network.",
-      "Equipo Anden te acompana en la migracion: legal, contable, operativo.",
-    ],
-    footer: "Aplica para empresas con clientes internacionales recurrentes, facturación en USD o EUR, y al menos 70% de su facturación afectada a la Economía del Conocimiento.",
-  },
-];
 
 function ProfileCardComponent({
   profile,
@@ -314,7 +245,9 @@ function ProfileCardComponent({
 }
 
 export default function ParaVos() {
+  const { t } = useLanguage();
   const [openIndex, setOpenIndex] = useState<number>(0); // First card open by default
+  const profiles = t.paraVos.profiles;
 
   return (
     <section
@@ -328,12 +261,12 @@ export default function ParaVos() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <span className="eyebrow eyebrow-navy">PARA VOS</span>
+          <span className="eyebrow eyebrow-navy">{t.paraVos.eyebrow}</span>
           <h2 className="h-display h-section" style={{ marginTop: 18, maxWidth: 800 }}>
-            Tres perfiles. Tres formas de aprovechar la zona.
+            {t.paraVos.title}
           </h2>
           <p className="body-lg" style={{ marginTop: 20, maxWidth: 640 }}>
-            Si te reconoces en alguno de estos, este programa fue disenado para vos. Hace click para ver como se aplica a tu caso.
+            {t.paraVos.intro}
           </p>
         </motion.div>
 
@@ -365,8 +298,8 @@ export default function ParaVos() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.24 }}
         >
-          <span style={{ fontWeight: 600, color: "var(--ink)", marginRight: 6 }}>Aclaración importante:</span>
-          Los beneficios fiscales descriptos están supeditados al éxito de la aplicación al régimen correspondiente de cada país. Andén Inception acompaña el proceso, pero no garantizamos el resultado de la solicitud. La aprobación depende de las autoridades fiscales y regulatorias de cada país.
+          <span style={{ fontWeight: 600, color: "var(--ink)", marginRight: 6 }}>{t.paraVos.disclaimerLabel}</span>
+          {t.paraVos.disclaimerBody}
         </motion.div>
       </div>
     </section>

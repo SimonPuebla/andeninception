@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import { useLanguage } from "../i18n/LanguageContext";
 
 const logos = [
   {
@@ -22,6 +23,7 @@ const logos = [
 ];
 
 export default function Hero({ onCta }: { onCta: () => void }) {
+  const { t } = useLanguage();
   return (
     <header
       id="top"
@@ -85,7 +87,7 @@ export default function Hero({ onCta }: { onCta: () => void }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.2, 0.6, 0.2, 1] }}
         >
-          ANDEN INCEPTION · LANZAMIENTO JUNIO 2026
+          {t.hero.badge}
         </motion.span>
         <motion.h1
           className="h-display h-hero"
@@ -94,7 +96,7 @@ export default function Hero({ onCta }: { onCta: () => void }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.06, ease: [0.2, 0.6, 0.2, 1] }}
         >
-          La primera zona economica digital de Latam abre sus primeros 50 lugares.
+          {t.hero.heading}
         </motion.h1>
         <motion.p
           className="body-lg-cream"
@@ -103,7 +105,7 @@ export default function Hero({ onCta }: { onCta: () => void }) {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.12, ease: [0.2, 0.6, 0.2, 1] }}
         >
-          Un programa de constitución y lanzamiento diseñado para empresas tech latinoamericanas. Te damos la zona digital, el compliance, la aplicación para la obtención de los beneficios fiscales, la red de inversores y el soporte para construir global sin mudarte. Todo en un solo lugar.
+          {t.hero.description}
         </motion.p>
         <motion.div
           style={{ display: "flex", flexDirection: "column", gap: 14, alignItems: "flex-start" }}
@@ -112,10 +114,10 @@ export default function Hero({ onCta }: { onCta: () => void }) {
           transition={{ duration: 0.8, delay: 0.18, ease: [0.2, 0.6, 0.2, 1] }}
         >
           <button className="btn btn-lg" onClick={onCta}>
-            Aplicar al cohort foundation <span>→</span>
+            {t.hero.apply} <span>→</span>
           </button>
           <span style={{ color: "var(--cream-50)", fontSize: 13 }}>
-            Aplicaciones abiertas. Seleccion rolling. El cohort cierra al alcanzar 50 empresas.
+            {t.hero.status}
           </span>
         </motion.div>
 
@@ -127,7 +129,7 @@ export default function Hero({ onCta }: { onCta: () => void }) {
           transition={{ duration: 0.8, delay: 0.24, ease: [0.2, 0.6, 0.2, 1] }}
         >
           <span style={{ color: "var(--cream-50)", fontSize: 12, letterSpacing: "0.18em", textTransform: "uppercase", fontWeight: 600 }}>
-            RESPALDADO POR
+            {t.hero.backedBy}
           </span>
           <div
             className="logo-row"

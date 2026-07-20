@@ -1,8 +1,12 @@
 "use client";
 import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
+import { useLanguage } from "../i18n/LanguageContext";
 
-const benefitCards = [
+export default function ZonaBeneficios() {
+  const { t } = useLanguage();
+  const benefitCards = t.zona.cards;
+  return (
   {
     stat: "Hasta 60%",
     name: "Reduccion de Ganancias",
@@ -93,30 +97,26 @@ function AnimatedStat({ card }: { card: typeof benefitCards[0] }) {
     >
       {displayValue}
     </div>
-  );
-}
+      );
+    }
 
-export default function ZonaBeneficios() {
-  return (
-    <section
-      id="zona"
-      style={{ padding: "clamp(80px,10vw,120px) clamp(24px,6vw,120px)", background: "var(--cream)" }}
-    >
-      <div style={{ maxWidth: 1240, margin: "0 auto" }}>
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <span className="eyebrow eyebrow-navy">LA ZONA</span>
-          <h2 className="h-display h-section" style={{ marginTop: 18, maxWidth: 900 }}>
-            Una zona digital con beneficios reales y respaldo legal.
-          </h2>
-          <p className="body-lg" style={{ marginTop: 24, maxWidth: 640 }}>
-            Construida sobre dos leyes argentinas vigentes: Ley 24.331 de Zonas Francas y Ley 27.506 de Economia del Conocimiento. Lo que firmas hoy, queda firme. Sin grises, sin promesas, sin nuevas leyes que esperar.
-          </p>
-        </motion.div>
+    return (
+      <section
+        id="zona"
+        style={{ padding: "clamp(80px,10vw,120px) clamp(24px,6vw,120px)", background: "var(--cream)" }}
+      >
+        <div style={{ maxWidth: 1240, margin: "0 auto" }}>
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <span className="eyebrow">{t.zona.eyebrow}</span>
+            <h2 className="h-display h-section" style={{ marginTop: 18, color: "var(--cream)", maxWidth: 900 }}>
+              {t.zona.title}
+            </h2>
+          </motion.div>
 
         {/* 6-card grid: 3 + 3 */}
         <div style={{ marginTop: 64 }}>

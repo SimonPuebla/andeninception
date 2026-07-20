@@ -1,7 +1,9 @@
 "use client";
 import { motion } from "framer-motion";
+import { useLanguage } from "../i18n/LanguageContext";
 
 export default function FinalCTA({ onCta }: { onCta: () => void }) {
+  const { t } = useLanguage();
   return (
     <section
       style={{
@@ -48,7 +50,7 @@ export default function FinalCTA({ onCta }: { onCta: () => void }) {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          Las primeras 50 son las que cuentan la historia.
+          {t.finalCta.title}
         </motion.h2>
         <motion.p
           style={{ maxWidth: 700, margin: "0 auto 36px", color: "var(--cream-70)", fontSize: 18, lineHeight: 1.6 }}
@@ -57,7 +59,7 @@ export default function FinalCTA({ onCta }: { onCta: () => void }) {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.06 }}
         >
-          Si estas construyendo algo serio desde Latam y queres operar desde una zona digital disenada para vos, este es el momento.
+          {t.finalCta.description}
         </motion.p>
         <motion.button
           className="btn btn-lg"
@@ -67,7 +69,7 @@ export default function FinalCTA({ onCta }: { onCta: () => void }) {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.12 }}
         >
-          Sumarme al waitlist <span>→</span>
+          {t.finalCta.cta} <span>→</span>
         </motion.button>
         <motion.p
           style={{ marginTop: 18, color: "var(--cream-50)", fontSize: 13 }}

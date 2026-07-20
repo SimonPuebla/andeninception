@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import { useLanguage } from "../i18n/LanguageContext";
 
 type FormState = {
   nombre: string;
@@ -9,6 +10,7 @@ type FormState = {
 };
 
 export default function WaitlistModal({ open, onClose }: { open: boolean; onClose: () => void }) {
+  const { t } = useLanguage();
   const [form, setForm] = useState<FormState>({
     nombre: "",
     apellido: "",

@@ -1,15 +1,16 @@
 "use client";
 import { motion } from "framer-motion";
-
-const previewItems = [
-  "Zona digital",
-  "Beneficios fiscales",
-  "Banking en USD / Stables",
-  "Red de inversores",
-  "USD 1.5M en perks by NVIDIA Inception y partners",
-];
+import { useLanguage } from "../i18n/LanguageContext";
 
 export default function Programa() {
+  const { t } = useLanguage();
+  const previewItems = [
+    t.programa.preview1,
+    t.programa.preview2,
+    t.programa.preview3,
+    t.programa.preview4,
+    t.programa.preview5,
+  ];
   return (
     <section
       id="programa"
@@ -23,9 +24,9 @@ export default function Programa() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <span className="eyebrow eyebrow-navy">EL PROGRAMA</span>
+          <span className="eyebrow eyebrow-navy">{t.programa.eyebrow}</span>
           <h2 className="h-display h-section" style={{ marginTop: 18, maxWidth: 900 }}>
-            No es solo la constitución. Es un programa de lanzamiento completo.
+            {t.programa.title}
           </h2>
         </motion.div>
 
@@ -37,17 +38,9 @@ export default function Programa() {
             transition={{ duration: 0.8, delay: 0.06 }}
           >
             <p className="body-lg">
-              Anden Inception es la primera cohort de empresas que se incorpora a la zona economica digital. Pensado como un programa de incubacion premium: te damos una zona digital operativa, acompañamos en la aplicación y registro de regimenes de beneficios fiscales,  te conectamos con inversores, y te potenciamos para que tu empresa salga al mundo con todo resuelto desde el día uno.
-            </p>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, delay: 0.12 }}
-          >
-            <p className="body-lg">
-              Las que entran al cohort foundation acceden a beneficios, perks y red que no van a estar disponibles cuando el programa abra acceso general. Y forman parte de la historia que recien empieza: la primera zona digital disenada para construir global desde el sur.
+          {t.programa.description1}
+
+          {t.programa.description2}
             </p>
           </motion.div>
         </div>
