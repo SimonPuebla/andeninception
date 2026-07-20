@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { LanguageProvider } from "./i18n/LanguageContext";
 
 export const metadata: Metadata = {
   title: "Andén Inception | Lanzamiento Junio 2026",
@@ -40,7 +41,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className="bg-white">
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <LanguageProvider>{children}</LanguageProvider>
+      </body>
     </html>
   );
 }

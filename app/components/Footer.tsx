@@ -1,6 +1,8 @@
 "use client";
+import { useLanguage } from "../i18n/LanguageContext";
 
 export default function Footer() {
+  const { t } = useLanguage();
   return (
     <footer
       style={{
@@ -27,7 +29,7 @@ export default function Footer() {
             />
           </a>
           <p style={{ maxWidth: 420, color: "var(--cream-70)", fontSize: 14, lineHeight: 1.6, marginTop: 18 }}>
-            La infraestructura de compliance que convierte zonas obsoletas en zonas digitales operativas.
+            {t.footer.tagline}
           </p>
         </div>
         <div>
