@@ -299,8 +299,8 @@ export default function LoQueIncluye() {
             ))}
           </div>
 
-          {/* Cards 06–13 — Partner cards */}
-          <div className="card-pair" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 18 }}>
+          {/* Cards 06–14 — Partner cards - 3 columns on desktop, 2 on tablet, 1 on mobile */}
+          <div className="card-pair" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(350px, 1fr))", gap: 18 }}>
             {benefitCards.slice(5).map((card, i) => {
               const c = card as typeof card & { logo?: string; logoAlt?: string; logoWidth?: number; logoDark?: boolean };
               return (
