@@ -95,6 +95,14 @@ const benefitCards = [
     logoAlt: "Fil One",
     logoWidth: 100,
   },
+  {
+    num: "14",
+    title: "Dropbox Sign — firma electrónica ilimitada",
+    body: "30 días de prueba gratuita con 2 licencias de Dropbox Sign Standard. Solicitudes de firma ilimitadas, firmas ilimitadas, plantillas para documentos recurrentes, orden de firma personalizado, recordatorios automáticos, historial y auditoría completo, colaboración en equipo, e integraciones con Dropbox, Google Drive, OneDrive, Salesforce, Zapier y más. Al finalizar, puedes continuar con el plan gratuito (3 solicitudes por mes). Contacta a ventas@tline.com.ar con tu nombre, empresa y mail para activar tu trial.",
+    logo: "/logos/dropbox-sign.png",
+    logoAlt: "Dropbox Sign",
+    logoWidth: 150,
+  },
 ];
 
 export default function LoQueIncluye() {
@@ -112,7 +120,7 @@ export default function LoQueIncluye() {
         >
           <span className="eyebrow eyebrow-navy">LO QUE RECIBIS</span>
           <h2 className="h-display h-section" style={{ marginTop: 18, maxWidth: 800 }}>
-            Trece cosas que solo el cohort foundation se lleva.
+            Catorce cosas que solo el cohort foundation se lleva.
           </h2>
         </motion.div>
 
