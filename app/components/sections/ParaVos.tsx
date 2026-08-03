@@ -23,7 +23,6 @@ const profiles: ProfileCard[] = [
       "Ganancias hasta el 15% efectivo en lugar de 35% del regimen general",
       "Reduccion de 40-80% en cargas patronales via bono de credito fiscal LEC",
       "0% de retenciones a la exportacion de servicios",
-      "Operacion legal en USD bajo regimen de Zona Franca",
       "USD 1.5M en perks del ecosistema NVIDIA Inception y partners",
       "Setup legal completo, aplicación y compliance recurrente bajo régimen LEC y ZFM",
       "Red de pares en industrias de conocimiento, partners y oportunidades cruzadas",
