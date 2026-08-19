@@ -103,6 +103,14 @@ const benefitCards = [
     logoAlt: "Dropbox Sign",
     logoWidth: 150,
   },
+  {
+    num: "15",
+    title: "Kleros Enterprise — resolución de disputas online",
+    body: "Primer caso 100% gratis, con gestión y acompañamiento del equipo de Kleros Enterprise durante todo el proceso. Resolvé conflictos con clientes, proveedores o socios de forma rápida, imparcial y transparente, reduciendo costos legales y evitando procesos largos.",
+    logo: "/logos/kleros.png",
+    logoAlt: "Kleros",
+    logoWidth: 120,
+  },
 ];
 
 export default function LoQueIncluye() {
@@ -120,7 +128,7 @@ export default function LoQueIncluye() {
         >
           <span className="eyebrow eyebrow-navy">LO QUE RECIBIS</span>
           <h2 className="h-display h-section" style={{ marginTop: 18, maxWidth: 800 }}>
-            Catorce cosas que solo el cohort foundation se lleva.
+            Quince cosas que solo el cohort foundation se lleva.
           </h2>
         </motion.div>
 
